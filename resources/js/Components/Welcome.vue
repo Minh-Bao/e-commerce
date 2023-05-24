@@ -73,7 +73,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
                     </svg>
 
                     <h2 class="ml-3 text-xl font-semibold text-gray-900">
-                        <a href="https://tailwindcss.com/">Mentions Légales</a>
+                        <a href="#">Mentions Légales</a>
                     </h2>
                 </div>
 
