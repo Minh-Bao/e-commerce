@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->longText('description');
+            $table->string('product_img_path', 2048);
+            $table->string('image_alt');
             $table->decimal('price');
+            $table->bigInteger('quantity')->default(0);;
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
         
