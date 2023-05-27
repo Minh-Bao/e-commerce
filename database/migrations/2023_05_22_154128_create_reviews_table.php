@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('product_id');
-            $table->text('alias')->nullable();
+            $table->string('alias')->unique()->nullable();
+            $table->string('email')->unique()->nullable();
             $table->string('img_path', 2048)->nullable();
             $table->text('review');
             $table->integer('rating');
@@ -29,7 +30,8 @@ return new class extends Migration
             $table->foreign('product_id')
                 ->references('id')
                 ->on('products')
-                ->onDelete('cascade');        });
+                ->onDelete('cascade');        
+        });
     }
 
     /**
