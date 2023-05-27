@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreReviewRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class StoreReviewRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +23,11 @@ class StoreReviewRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'alias' => 'nullable|string|max:20|min:2',
+            'img_path' => 'nullable|string|max:255',
+            'email' => 'nullable|string|email|max:255|unique:users,email',
+            'review' => 'required|string|accepted|max:1500',
+            'rating' => 'required|numeric|min:0',
         ];
     }
 }
