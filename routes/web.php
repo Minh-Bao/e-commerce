@@ -23,6 +23,9 @@ Route::get('/', [ProductController::class, 'index'])->name('welcome');
 Route::get('/products/{product}/show', [ProductController::class, 'show'])
         ->name('product.show');
 
+//Reviews
+Route::post('/review/create', [ReviewController::class, 'create'])->name('review.create');
+Route::post('/products/{product}/reviews/', [ProductController::class, 'reviewsList'])->name("review.list");        
 
 
 Route::middleware([
