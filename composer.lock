@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea768488729fb9bdabb4502b8e6a71b0",
+    "content-hash": "3b0ebd265eabc29363d99d775dc63103",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2360,6 +2360,69 @@
                 }
             ],
             "time": "2023-02-06T13:46:10+00:00"
+        },
+        {
+            "name": "nadar/quill-delta-parser",
+            "version": "3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nadar/quill-delta-parser.git",
+                "reference": "40e21fd139ee29b48f3931cf00507879473bc1c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nadar/quill-delta-parser/zipball/40e21fd139ee29b48f3931cf00507879473bc1c3",
+                "reference": "40e21fd139ee29b48f3931cf00507879473bc1c3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.2",
+                "phpstan/phpstan": "^1.7",
+                "phpunit/phpunit": "^8.0",
+                "rector/rector": "^0.14.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "nadar\\quill\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Basil Suter",
+                    "email": "git@nadar.io"
+                }
+            ],
+            "description": "A PHP library to parse Quill WYSIWYG editor deltas into HTML - flexible and extendible for custom elements.",
+            "keywords": [
+                "delta",
+                "html",
+                "parser",
+                "quill",
+                "quill-delta",
+                "quill-editor",
+                "quilljs",
+                "renderer"
+            ],
+            "support": {
+                "issues": "https://github.com/nadar/quill-delta-parser/issues",
+                "source": "https://github.com/nadar/quill-delta-parser/tree/3.3.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/nadar",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-03-24T17:57:30+00:00"
         },
         {
             "name": "nesbot/carbon",
