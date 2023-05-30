@@ -18,15 +18,29 @@ class ReviewFactory extends Factory
      */
     public function definition(): array
     {
-        $user = $this->faker->boolean(50)? User::factory()->create() : null;
+        $user = $this->getUserOrNot();
         return [
             'review'     => $this->faker->paragraph,
-            'rating'     => $this->faker->numberBetween(0, 5),
-            'alias'      => isset($user) ?  $user->name : "user_" . $this->faker->word,
-            'img_path'   => null,
-            'user_id'    => isset($user) ? $user->id :  $this->faker->randomElement(User::pluck('id')->all()),
-            'product_id' => $this->faker->randomElement(Product::pluck('id')->all())
+            'rating'     => $this->faker->numberBetween(1, 5),
+            'alias'      => isset($user) ?  $user->name : "User : " . $this->faker->userName(),
+            'image_path'   => null,
+            'email'      => isset($user) ? $user->email : $this->faker->email(),
+            'user_id'    => isset($user) ? $user->id :  null,
+            'product_id' => $this->faker->randomElement(Product::all()) ,
+            'created_at' => $this->faker->dateTimeBetween('-3 years','now', 'Europe/Paris'),
+            'updated_at' => $this->faker->dateTimeBetween('-3 years','now', 'Europe/Paris'),
         ];
+    }
+
+    /**
+     * Generate user or not
+     *
+     * @return User|null
+     */
+    private function getUserOrNot(): ?User
+    {
+        return $this->faker->boolean(60) ? $this->faker->randomElement(User::all()) : null;
+
     }
 
 

@@ -25,7 +25,6 @@ class ProductFactory extends Factory
             'product_img_path' => $this->faker->imageUrl($width = 800, $height = 600),
             'image_alt'        => $this->faker->sentence(5),
             'quantity'         => $this->faker->boolean(80) ? $this->faker->numberBetween(15, 2500) : 0,
-            'user_id'          => $this->faker->randomElement(User::pluck('id')->all())
         ];
     }
 }
