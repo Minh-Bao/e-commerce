@@ -4,6 +4,8 @@
 /public/build
 /public/hot
 /public/storage
+/public/image
+/public/image/review
 /storage/*.key
 /vendor
 .env
