@@ -2,8 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Http\FormRequest;
 
 class StoreReviewRequest extends FormRequest
 {
@@ -23,11 +24,24 @@ class StoreReviewRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'alias' => 'nullable|string|max:20|min:2',
-            'img_path' => 'nullable|string|max:255',
-            'email' => 'nullable|string|email|max:255|unique:users,email',
-            'review' => 'required|string|accepted|max:1500',
+            'alias' => [
+                Rule::requiredIf( !Auth::check()),
+                'nullable',
+                'string',
+                'max:10',
+                'min:3'               
+                ] ,
+            'email' => [
+                Rule::requiredIf( !Auth::check()),
+                'nullable',
+                'string',
+                'max:30'             
+            ], 
+            'image_path' => 'nullable|mimes:jpg,jpeg,png,gif|max:10240',
+            'review' => 'required|json|max:8000',
             'rating' => 'required|numeric|min:0',
+            'user_id' => 'nullable|numeric|exists:users,id',
+            'product_id' => 'required|numeric|exists:products,id',
         ];
     }
 }
