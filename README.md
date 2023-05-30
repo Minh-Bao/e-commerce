@@ -9,7 +9,7 @@ La version PHP est la 8.2.5
 - Cloner le projet   
 
 ```bash
-https://github.com/Minh-Bao/fizzup_test.git
+git clone https://github.com/Minh-Bao/fizzup_test.git
 ```
 
 - Installer les dependances composer  
