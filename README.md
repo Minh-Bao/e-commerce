@@ -1,5 +1,8 @@
 ## Fizzup test
 
+Ce projet a été fait avec Laravel Inertia et VueJs3 pour le front . 
+La version PHP est la 8.2.5 
+
 
 ### Installation du projet
 
