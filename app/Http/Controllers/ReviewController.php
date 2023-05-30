@@ -17,7 +17,7 @@ class ReviewController extends Controller
     {
         $validated = $request->validated();
         $review = Review::create($validated);
-        $this->uploadImg($review,$validated, $request);
+        if($request->image_path) $this->uploadImg($review,$validated, $request);
 
         return to_route('product.show', $request->product_id)->with('Message', 'Review and image upload successfully');
     }
