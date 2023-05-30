@@ -47,6 +47,7 @@ php artisan serve
 - Se rendre à l'adresse http://localhost:8000 pour visiter le site  
 - Le projet et le fichier composer.json sont set à php8.2.5  
 - Vous pouvez vous connecter en récupérant un mail dans la table user et le mot de passe pour tous les utilisateurs est "password"  
+- Vous pouvez aussi créer un compte et l'utiliser pour rendre un avis 
 - Lorsque l'on crée un avis on peut mettre un alias et nouveau mail. Mais par défaut lorsque l'on se connecte et que l'on ne rempli pas les champs alias et email. Le username et le mail de l'inscription seront affiché d'ofice.
 - Aussi lorsque l'on n'est pas connecté les champs alias et email sont obligatoires. 
  
