@@ -27,7 +27,7 @@
                 <div v-if="$page.props.auth.user" class="ml-4 flow-root lg:ml-6">
                   <Link  :href="route('dashboard')" class="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon class="h-6 w-6 flex-shrink-0 text-indigo-400 group-hover:text-indigo-500" aria-hidden="true" />
-                    <span class="ml-2 text-sm font-medium text-indigo-700 group-hover:text-indigo-800">0</span>
+                    <span class="ml-2 text-sm font-medium text-indigo-700 group-hover:text-indigo-800">{{ countUserProduct  }}</span>
                     <span class="text-sm italic text-gray-400  p-2">items in cart</span>
                   </link>
                 </div>
@@ -240,6 +240,7 @@ import ReviewsList from "@/Components/ReviewsList.vue";
 import FormReviewModal from "@/Components/FormReviewModal.vue";
 
 const data = defineProps([
+    'countUserProduct',
     'user',
     "featured",
     "reviews",

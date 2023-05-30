@@ -69,6 +69,7 @@ class ProductController extends Controller
             'featured'  => $this->getProductReviewsSorted($product, $request),
             'user'  => Auth::check() ? Auth::user() : null,
             'review_create_url' => route('review.create', $product->id),
+            'countUserProduct' => Auth::check() ? Auth::user()->products->count() : 0
         ]); 
     }
 
