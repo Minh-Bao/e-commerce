@@ -2,7 +2,8 @@
 
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -16,17 +17,15 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// Home page
+// index product page
 Route::get('/', [ProductController::class, 'index'])->name('welcome');
 
-//Products pages
+//detail product page
 Route::get('/products/{product}/show', [ProductController::class, 'show'])
         ->name('product.show');
 
-//Reviews
-Route::post('/review/create', [ReviewController::class, 'create'])->name('review.create');
-Route::post('/products/{product}/reviews/', [ProductController::class, 'reviewsList'])->name("review.list");        
-
+//Create review
+Route::post('/products/{productId}/review/create', [ReviewController::class, 'store'])->name('review.create');
 
 Route::middleware([
     'auth:sanctum',
