@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Product;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,6 +12,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Review extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
      
     /******************** RELATIONSHIPS ******************/  
 
@@ -29,4 +32,19 @@ class Review extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+     /******************** SCOPE ******************/ 
+
+    /**
+     * Scope a query to only include popular users.
+     *
+     * @param Builder $query
+     * @param integer $rate
+     * @return integer
+     */
+    public function scopeRates(Builder $query,int $rate): int
+    {
+        return $query->where('rating', $rate)->get()->count();
+    }
+
 }
