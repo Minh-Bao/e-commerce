@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\Pivots\ProductUser;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class ProductController extends Controller
@@ -69,7 +70,7 @@ class ProductController extends Controller
             'featured'  => $this->getProductReviewsSorted($product, $request),
             'user'  => Auth::check() ? Auth::user() : null,
             'review_create_url' => route('review.create', $product->id),
-            'countUserProduct' => Auth::check() ? Auth::user()->products->count() : 0
+            'countUserProduct' => Auth::check() ? ProductUser::where('user_id', Auth::user()->id)->count() : 0
         ]); 
     }
 
