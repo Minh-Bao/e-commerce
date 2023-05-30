@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('product_id');
-            $table->string('alias')->unique()->nullable();
-            $table->string('email')->unique()->nullable();
-            $table->string('img_path', 2048)->nullable();
-            $table->text('review');
+            $table->string('alias')->nullable();
+            $table->string('email')->nullable();
+            $table->string('image_path', 2048)->nullable();
+            $table->longText('review');
             $table->integer('rating');
             $table->timestamps();
         
