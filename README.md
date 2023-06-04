@@ -1,4 +1,4 @@
-## Fizzup test
+## Ecommerce test
 
 Ce projet a été fait avec Laravel version 10  via Inertia et VueJs3/Tailwindcss et quelques packages notammet pour l'éditeur de texte pour le front . 
 La version PHP est la 8.2.5 
